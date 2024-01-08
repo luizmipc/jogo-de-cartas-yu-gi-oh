@@ -134,16 +134,16 @@ async function updateScore() {
 }
 
 async function checkDuelResults(playerCardId, ComputerCardId) {
-    let duelResults = "DRAW";
+    let duelResults = "draw";
     let playerCard = cardData[playerCardId.id];
 
     if (playerCard.WinOf.includes(ComputerCardId.id)) {
-        duelResults = "WIN";
+        duelResults = "win";
         state.score.playerScore++;
     }
 
     if (playerCard.LoseOf.includes(ComputerCardId.id)) {
-        duelResults = "LOSE";
+        duelResults = "lose";
         state.score.computerScore++;
     }
     await playAduio(duelResults);
